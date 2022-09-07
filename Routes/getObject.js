@@ -5,7 +5,7 @@ const router = express.Router()
 router.get('/', async (req, res) => {
     try {
         const object = await Object.aggregate([{ $sample: { size: 1 } }])
-        res.json(object[0])
+        res.json(object)
     } catch (error) {
         console.log(error);
         res.send(error)
