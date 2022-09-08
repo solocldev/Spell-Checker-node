@@ -4,6 +4,7 @@ import cors from 'cors'
 import mongoose from 'mongoose'
 import getObject from './Routes/getObject.js'
 import addLog from './Routes/addLog.js'
+import demo from './Routes/demo.js'
 
 const app = express()
 
@@ -17,6 +18,7 @@ mongoose.connect(process.env.URL, {
 
 app.use('/api/get', getObject)
 app.use('/api/add', addLog)
+app.use('/api/demo', demo)
 
 const port = process.env.PORT || 4000
 
